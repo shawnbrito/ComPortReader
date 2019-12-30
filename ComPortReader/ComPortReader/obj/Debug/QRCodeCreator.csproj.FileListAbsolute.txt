@@ -1,0 +1,9 @@
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\bin\Debug\QRCodeCreator.exe.config
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\bin\Debug\QRCodeCreator.exe
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\bin\Debug\QRCodeCreator.pdb
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.csprojResolveAssemblyReference.cache
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.frmQRCoder.resources
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.Properties.Resources.resources
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.csproj.GenerateResource.Cache
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.exe
+D:\Platform1_Tools\CSharpProjs\QRCodeCreator\QRCodeCreator\obj\Debug\QRCodeCreator.pdb
