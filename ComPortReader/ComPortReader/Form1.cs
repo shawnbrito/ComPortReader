@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace QRCodeCreator
 {
     public partial class frmQRCoder : Form
     {
         SerialPort port = null;
-        string path = "D:/Data/ELK/datafiles/dht22.csv";
+        string path = "D:/Data/ELK/datafiles/dht/dht22.csv";
         public frmQRCoder()
         {
             InitializeComponent();
@@ -29,10 +31,23 @@ namespace QRCodeCreator
             string POT = port.ReadExisting(); //changing between 0-1023
             txtArduino.Text += POT;
             string strDate = DateTime.Now.ToString("dd'/'MM'/'yyyy HH:mm:ss");
+            var json = "";
+            var theUrl = "http://api.openweathermap.org/data/2.5/weather?q=Colombo,lk&APPID=eae8ded85c06e6fe4053e79c0affdd0e";
 
+            using (WebClient wc = new WebClient())
+            {
+                json = wc.DownloadString(theUrl);
+            }
+
+            JObject o = JObject.Parse(json);
+            string temp = (string)o.SelectToken("main.temp");
+            string humid = (string)o.SelectToken("main.humidity");
+            float cTemp = float.Parse(temp);  // Convert Kelvin to Celsius
+            txtArduino.Text += "Temperature:) " + (cTemp - 273.15) + "\r\n";
+            string colTemp = (Math.Round((cTemp-273.15)*100f)/100f).ToString();
             using (StreamWriter writer = new StreamWriter(path, true))
             {
-                writer.Write(strDate + ";"+POT);
+                writer.WriteLine(strDate + ";"+POT+";"+colTemp+";"+humid+";");
             }
         }
 
@@ -47,4 +62,6 @@ namespace QRCodeCreator
             Application.Exit();
         }
     }
+
+
 }
