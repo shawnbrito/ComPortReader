@@ -1,0 +1,12 @@
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\QRCodeCreator.exe.config
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\QRCodeCreator.exe
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\QRCodeCreator.pdb
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\QRCodeCreator.exe
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\QRCodeCreator.pdb
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\ComPortReader.csprojResolveAssemblyReference.cache
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\QRCodeCreator.frmQRCoder.resources
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\QRCodeCreator.Properties.Resources.resources
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Debug\ComPortReader.csproj.GenerateResource.Cache
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\Newtonsoft.Json.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\Newtonsoft.Json.xml
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\SimpleTCP.dll

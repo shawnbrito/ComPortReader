@@ -11,6 +11,7 @@ using System.IO.Ports;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using SimpleTCP;
 
 namespace QRCodeCreator
 {
@@ -43,12 +44,20 @@ namespace QRCodeCreator
             string temp = (string)o.SelectToken("main.temp");
             string humid = (string)o.SelectToken("main.humidity");
             float cTemp = float.Parse(temp);  // Convert Kelvin to Celsius
-            txtArduino.Text += "Temperature:) " + (cTemp - 273.15) + "\r\n";
-            string colTemp = (Math.Round((cTemp-273.15)*100f)/100f).ToString();
+            txtArduino.Text += "Temperature " + Math.Round(cTemp - 273.15,2) + "\r\n";
+            string colTemp = (Math.Round(((cTemp-273.15)*100f)/100f,2)).ToString();
             using (StreamWriter writer = new StreamWriter(path, true))
             {
                 writer.WriteLine(strDate + ";"+POT+";"+colTemp+";"+humid+";");
             }
+
+            using (SimpleTcpClient client = new SimpleTcpClient().Connect("127.0.0.1", 12001))
+            {
+                LogJson log = new LogJson(1001, DateTime.Now, strDate + ";" + POT + ";" + colTemp + ";" + humid + ";");
+                client.WriteLine(log.ToString());
+                client.Disconnect();
+            }
+
         }
 
         private void frmQRCoder_FormClosed(object sender, FormClosedEventArgs e)
