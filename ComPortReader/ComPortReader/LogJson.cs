@@ -9,12 +9,17 @@ namespace QRCodeCreator
 {
     class LogJson
     {
-        public readonly int mID;
-        public readonly DateTime mDateTime;
-        public readonly string mMessage;
+        //https://github.com/adrianpietka/logstash-sender/tree/master/FeedLogstash
 
+        public readonly int Id;
+        public readonly DateTime DateTime;
+        public readonly string message;
+        public readonly List<string> tags;
+        
         public LogJson(int id, DateTime dateTime, string mess) {
-            mID = id; mDateTime = dateTime; mMessage = mess;
+            Id = id; DateTime = dateTime; message = mess;
+            tags = new List<string>();
+            tags.Add("DHT22");
         }
 
         public override string ToString() {

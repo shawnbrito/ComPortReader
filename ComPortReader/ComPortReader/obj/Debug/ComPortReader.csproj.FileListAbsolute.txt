@@ -10,3 +10,12 @@ D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\obj\Deb
 D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\Newtonsoft.Json.dll
 D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\Newtonsoft.Json.xml
 D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\SimpleTCP.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NetStash.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\System.Data.SQLite.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\System.Data.SQLite.xml
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\Mono.Data.Sqlite.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NLog.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NLog.xml
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NLog.config
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NLog.StructuredLogging.Json.dll
+D:\Platform1_Tools\CSharpProjs\ComPortReader\ComPortReader\ComPortReader\bin\Debug\NLog.StructuredLogging.Json.pdb

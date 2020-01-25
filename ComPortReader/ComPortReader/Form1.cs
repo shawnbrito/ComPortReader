@@ -11,6 +11,9 @@ using System.IO.Ports;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using NLog;
+using NLog.Config;
+using NLog.StructuredLogging.Json;
 using SimpleTCP;
 
 namespace QRCodeCreator
@@ -29,6 +32,22 @@ namespace QRCodeCreator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            CallPortReader();
+        }
+
+        private void frmQRCoder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            port.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            port.Close();
+            Application.Exit();
+        }
+
+        private void CallPortReader()
+        {
             string POT = port.ReadExisting(); //changing between 0-1023
             txtArduino.Text += POT;
             string strDate = DateTime.Now.ToString("dd'/'MM'/'yyyy HH:mm:ss");
@@ -44,31 +63,30 @@ namespace QRCodeCreator
             string temp = (string)o.SelectToken("main.temp");
             string humid = (string)o.SelectToken("main.humidity");
             float cTemp = float.Parse(temp);  // Convert Kelvin to Celsius
-            txtArduino.Text += "Temperature " + Math.Round(cTemp - 273.15,2) + "\r\n";
-            string colTemp = (Math.Round(((cTemp-273.15)*100f)/100f,2)).ToString();
+            txtArduino.Text += "Temperature " + Math.Round(cTemp - 273.15, 2) + "\r\n";
+            string colTemp = (Math.Round(((cTemp - 273.15) * 100f) / 100f, 2)).ToString();
             using (StreamWriter writer = new StreamWriter(path, true))
             {
-                writer.WriteLine(strDate + ";"+POT+";"+colTemp+";"+humid+";");
+                writer.WriteLine(strDate + ";" + POT + ";" + colTemp + ";" + humid + ";");
             }
 
-            using (SimpleTcpClient client = new SimpleTcpClient().Connect("127.0.0.1", 12001))
+            /*using (SimpleTcpClient client = new SimpleTcpClient().Connect("127.0.0.1", 12001))
             {
                 LogJson log = new LogJson(1001, DateTime.Now, strDate + ";" + POT + ";" + colTemp + ";" + humid + ";");
                 client.WriteLine(log.ToString());
+                txtArduino.Text += log.ToString() + "\r\n";
                 client.Disconnect();
-            }
-
+            }*/
+            string strFile = "D:\\Platform1_Tools\\CSharpProjs\\ComPortReader\\ComPortReader\\ComPortReader\\netlog.xml";
+            LogManager.Configuration = new XmlLoggingConfiguration(strFile);
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+            logger.ExtendedInfo(strDate + ";" + POT + ";" + colTemp + ";" + humid + ";", new { WordOfTheDay = "Jibble" });
+            logger.Factory.Flush();
         }
 
-        private void frmQRCoder_FormClosed(object sender, FormClosedEventArgs e)
+        private void ReadPort_Click(object sender, EventArgs e)
         {
-            port.Close();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            port.Close();
-            Application.Exit();
+            CallPortReader();
         }
     }
 
